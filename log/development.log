@@ -400,6 +400,7 @@ Processing by ArtistsController#index as */*
 Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.8ms | Allocations: 945)
 
 
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2020-08-17 15:48:23 -0400
   [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by Rails::WelcomeController#index as HTML
@@ -439,6 +440,121 @@ actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
 actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+=======
+Started GET "/artists" for ::1 at 2020-08-17 15:47:16 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 8.6ms | ActiveRecord: 12.4ms | Allocations: 5681)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (2.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sleepyfoot?"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 19:47:38.691807"], ["updated_at", "2020-08-17 19:47:38.691807"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge Guillen"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 19:47:38.699007"], ["updated_at", "2020-08-17 19:47:38.699007"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francis Picabia"], ["age", 73], ["location", "France"], ["created_at", "2020-08-17 19:47:38.703239"], ["updated_at", "2020-08-17 19:47:38.703239"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerard Richter"], ["age", 80], ["location", "Dresden, Germany"], ["created_at", "2020-08-17 19:47:38.710768"], ["updated_at", "2020-08-17 19:47:38.710768"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Camron Roland"], ["age", 32], ["location", "Philly, PA"], ["created_at", "2020-08-17 19:47:38.714466"], ["updated_at", "2020-08-17 19:47:38.714466"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jordan Casteel"], ["age", 31], ["location", "Denver, CO"], ["created_at", "2020-08-17 19:47:38.717836"], ["updated_at", "2020-08-17 19:47:38.717836"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kara Walker"], ["age", 50], ["location", "California"], ["created_at", "2020-08-17 19:47:38.722241"], ["updated_at", "2020-08-17 19:47:38.722241"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wassily Kandinsky"], ["age", 76], ["location", "Moscow, Russia"], ["created_at", "2020-08-17 19:47:38.726640"], ["updated_at", "2020-08-17 19:47:38.726640"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kerry James Marshall"], ["age", 64], ["location", "Chicago, IL"], ["created_at", "2020-08-17 19:47:38.729921"], ["updated_at", "2020-08-17 19:47:38.729921"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Alfaro Siqueiros"], ["age", 64], ["location", "Mexico City, Mexico"], ["created_at", "2020-08-17 19:47:38.733075"], ["updated_at", "2020-08-17 19:47:38.733075"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/artists" for ::1 at 2020-08-17 15:47:46 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 7.6ms | ActiveRecord: 6.5ms | Allocations: 6923)
+
+
+Started GET "/artists" for ::1 at 2020-08-17 15:48:15 -0400
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.1ms | Allocations: 2204)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sleepyfoot?"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 20:00:26.467946"], ["updated_at", "2020-08-17 20:00:26.467946"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge Guillen"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 20:00:26.475408"], ["updated_at", "2020-08-17 20:00:26.475408"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francis Picabia"], ["age", 73], ["location", "France"], ["created_at", "2020-08-17 20:00:26.480990"], ["updated_at", "2020-08-17 20:00:26.480990"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerard Richter"], ["age", 80], ["location", "Dresden, Germany"], ["created_at", "2020-08-17 20:00:26.484513"], ["updated_at", "2020-08-17 20:00:26.484513"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Camron Roland"], ["age", 32], ["location", "Philly, PA"], ["created_at", "2020-08-17 20:00:26.487745"], ["updated_at", "2020-08-17 20:00:26.487745"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jordan Casteel"], ["age", 31], ["location", "Denver, CO"], ["created_at", "2020-08-17 20:00:26.492152"], ["updated_at", "2020-08-17 20:00:26.492152"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kara Walker"], ["age", 50], ["location", "California"], ["created_at", "2020-08-17 20:00:26.495382"], ["updated_at", "2020-08-17 20:00:26.495382"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wassily Kandinsky"], ["age", 76], ["location", "Moscow, Russia"], ["created_at", "2020-08-17 20:00:26.498672"], ["updated_at", "2020-08-17 20:00:26.498672"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kerry James Marshall"], ["age", 64], ["location", "Chicago, IL"], ["created_at", "2020-08-17 20:00:26.501995"], ["updated_at", "2020-08-17 20:00:26.501995"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Alfaro Siqueiros"], ["age", 64], ["location", "Mexico City, Mexico"], ["created_at", "2020-08-17 20:00:26.505724"], ["updated_at", "2020-08-17 20:00:26.505724"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (3.9ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Geffen"], ["location", "Hollywood"], ["phone_number", "213-552-1966"], ["created_at", "2020-08-17 20:00:26.517685"], ["updated_at", "2020-08-17 20:00:26.517685"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.3ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pamela J. Joyner"], ["location", "San Francisco, CA"], ["phone_number", "216-053-1221"], ["created_at", "2020-08-17 20:00:26.525906"], ["updated_at", "2020-08-17 20:00:26.525906"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (1.2ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oprah Winfrey"], ["location", "Montecito, CA"], ["phone_number", "Private"], ["created_at", "2020-08-17 20:00:26.529177"], ["updated_at", "2020-08-17 20:00:26.529177"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.3ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francois Pinault"], ["location", "Les Champ-Geraux, France"], ["phone_number", "Private"], ["created_at", "2020-08-17 20:00:26.533650"], ["updated_at", "2020-08-17 20:00:26.533650"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.3ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Damien Hirst"], ["location", "Bristol, UK"], ["phone_number", "Private"], ["created_at", "2020-08-17 20:00:26.537938"], ["updated_at", "2020-08-17 20:00:26.537938"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/artists" for ::1 at 2020-08-17 16:00:35 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 9.6ms | ActiveRecord: 8.5ms | Allocations: 8163)
+
+
+Started GET "/collector" for ::1 at 2020-08-17 16:00:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/collector"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+>>>>>>> sideBranch
 actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
 railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
@@ -461,6 +577,7 @@ puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/artists/0" for ::1 at 2020-08-17 15:48:55 -0400
 Processing by ArtistsController#show as HTML
   Parameters: {"id"=>"0"}
@@ -1143,5 +1260,567 @@ Processing by ArtistsController#index as HTML
 [active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
 [active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (34.45ms)
 Completed 200 OK in 46ms (Views: 30.4ms | ActiveRecord: 14.2ms | Allocations: 4059)
+=======
+Started GET "/artists" for ::1 at 2020-08-17 16:06:17 -0400
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 1.1ms | Allocations: 3478)
+
+
+Started GET "/collectors" for ::1 at 2020-08-17 16:08:38 -0400
+Processing by CollectorsController#index as HTML
+  [1m[36mCollector Load (2.2ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors"[0m
+  ↳ app/controllers/collectors_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 8.4ms | ActiveRecord: 9.4ms | Allocations: 5844)
+
+
+Started GET "/artists" for ::1 at 2020-08-17 17:48:08 -0400
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+Completed 200 OK in 53ms (Views: 30.6ms | ActiveRecord: 15.6ms | Allocations: 7644)
+>>>>>>> sideBranch
+
+
+Started GET "/artists" for ::1 at 2020-08-17 17:55:35 -0400
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (2.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (21.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (24.9ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (3.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (2.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (3.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (2.0ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.1ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.8ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.0ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (2.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (17.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 18]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (4.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 18]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (2.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 19]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.8ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 19]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 20]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 20]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 21]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 21]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (712.44ms)
+Completed 200 OK in 849ms (Views: 662.6ms | ActiveRecord: 156.4ms | Allocations: 87429)
+
+
+Started GET "/artists" for ::1 at 2020-08-17 17:55:40 -0400
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.8ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (4.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (2.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.2ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (19.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (5.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (2.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.2ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (3.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (3.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (3.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (3.1ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (2.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 18]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (6.1ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 18]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 19]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 19]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 20]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 20]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 21]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.8ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 21]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (373.79ms)
+Completed 200 OK in 383ms (Views: 302.1ms | ActiveRecord: 80.7ms | Allocations: 65574)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (2.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sleepyfoot?"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 22:00:41.139697"], ["updated_at", "2020-08-17 22:00:41.139697"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge Guillen"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 22:00:41.149095"], ["updated_at", "2020-08-17 22:00:41.149095"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francis Picabia"], ["age", 73], ["location", "France"], ["created_at", "2020-08-17 22:00:41.153721"], ["updated_at", "2020-08-17 22:00:41.153721"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerard Richter"], ["age", 80], ["location", "Dresden, Germany"], ["created_at", "2020-08-17 22:00:41.159628"], ["updated_at", "2020-08-17 22:00:41.159628"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Camron Roland"], ["age", 32], ["location", "Philly, PA"], ["created_at", "2020-08-17 22:00:41.164690"], ["updated_at", "2020-08-17 22:00:41.164690"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jordan Casteel"], ["age", 31], ["location", "Denver, CO"], ["created_at", "2020-08-17 22:00:41.169873"], ["updated_at", "2020-08-17 22:00:41.169873"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kara Walker"], ["age", 50], ["location", "California"], ["created_at", "2020-08-17 22:00:41.174518"], ["updated_at", "2020-08-17 22:00:41.174518"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wassily Kandinsky"], ["age", 76], ["location", "Moscow, Russia"], ["created_at", "2020-08-17 22:00:41.179621"], ["updated_at", "2020-08-17 22:00:41.179621"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kerry James Marshall"], ["age", 64], ["location", "Chicago, IL"], ["created_at", "2020-08-17 22:00:41.185142"], ["updated_at", "2020-08-17 22:00:41.185142"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Alfaro Siqueiros"], ["age", 64], ["location", "Mexico City, Mexico"], ["created_at", "2020-08-17 22:00:41.190886"], ["updated_at", "2020-08-17 22:00:41.190886"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.8ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Geffen"], ["location", "Hollywood"], ["phone_number", "213-552-1966"], ["created_at", "2020-08-17 22:00:41.213922"], ["updated_at", "2020-08-17 22:00:41.213922"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pamela J. Joyner"], ["location", "San Francisco, CA"], ["phone_number", "216-053-1221"], ["created_at", "2020-08-17 22:00:41.219343"], ["updated_at", "2020-08-17 22:00:41.219343"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.7ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oprah Winfrey"], ["location", "Montecito, CA"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:00:41.224634"], ["updated_at", "2020-08-17 22:00:41.224634"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.5ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francois Pinault"], ["location", "Les Champ-Geraux, France"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:00:41.230875"], ["updated_at", "2020-08-17 22:00:41.230875"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (1.2ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Damien Hirst"], ["location", "Bristol, UK"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:00:41.235870"], ["updated_at", "2020-08-17 22:00:41.235870"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sleepyfoot?"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 22:05:16.623931"], ["updated_at", "2020-08-17 22:05:16.623931"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge Guillen"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 22:05:16.631353"], ["updated_at", "2020-08-17 22:05:16.631353"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francis Picabia"], ["age", 73], ["location", "France"], ["created_at", "2020-08-17 22:05:16.635460"], ["updated_at", "2020-08-17 22:05:16.635460"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerard Richter"], ["age", 80], ["location", "Dresden, Germany"], ["created_at", "2020-08-17 22:05:16.640906"], ["updated_at", "2020-08-17 22:05:16.640906"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Camron Roland"], ["age", 32], ["location", "Philly, PA"], ["created_at", "2020-08-17 22:05:16.646227"], ["updated_at", "2020-08-17 22:05:16.646227"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jordan Casteel"], ["age", 31], ["location", "Denver, CO"], ["created_at", "2020-08-17 22:05:16.650511"], ["updated_at", "2020-08-17 22:05:16.650511"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kara Walker"], ["age", 50], ["location", "California"], ["created_at", "2020-08-17 22:05:16.654918"], ["updated_at", "2020-08-17 22:05:16.654918"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wassily Kandinsky"], ["age", 76], ["location", "Moscow, Russia"], ["created_at", "2020-08-17 22:05:16.660632"], ["updated_at", "2020-08-17 22:05:16.660632"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kerry James Marshall"], ["age", 64], ["location", "Chicago, IL"], ["created_at", "2020-08-17 22:05:16.664735"], ["updated_at", "2020-08-17 22:05:16.664735"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Alfaro Siqueiros"], ["age", 64], ["location", "Mexico City, Mexico"], ["created_at", "2020-08-17 22:05:16.670018"], ["updated_at", "2020-08-17 22:05:16.670018"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.6ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Geffen"], ["location", "Hollywood"], ["phone_number", "213-552-1966"], ["created_at", "2020-08-17 22:05:16.687191"], ["updated_at", "2020-08-17 22:05:16.687191"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pamela J. Joyner"], ["location", "San Francisco, CA"], ["phone_number", "216-053-1221"], ["created_at", "2020-08-17 22:05:16.691684"], ["updated_at", "2020-08-17 22:05:16.691684"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oprah Winfrey"], ["location", "Montecito, CA"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:05:16.695641"], ["updated_at", "2020-08-17 22:05:16.695641"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.3ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francois Pinault"], ["location", "Les Champ-Geraux, France"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:05:16.700276"], ["updated_at", "2020-08-17 22:05:16.700276"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Damien Hirst"], ["location", "Bristol, UK"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:05:16.704261"], ["updated_at", "2020-08-17 22:05:16.704261"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sleepyfoot?"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 22:06:11.376419"], ["updated_at", "2020-08-17 22:06:11.376419"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge Guillen"], ["age", 5], ["location", "Brooklyn, NY"], ["created_at", "2020-08-17 22:06:11.382418"], ["updated_at", "2020-08-17 22:06:11.382418"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francis Picabia"], ["age", 73], ["location", "France"], ["created_at", "2020-08-17 22:06:11.388892"], ["updated_at", "2020-08-17 22:06:11.388892"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gerard Richter"], ["age", 80], ["location", "Dresden, Germany"], ["created_at", "2020-08-17 22:06:11.394138"], ["updated_at", "2020-08-17 22:06:11.394138"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (1.2ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Camron Roland"], ["age", 32], ["location", "Philly, PA"], ["created_at", "2020-08-17 22:06:11.399579"], ["updated_at", "2020-08-17 22:06:11.399579"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jordan Casteel"], ["age", 31], ["location", "Denver, CO"], ["created_at", "2020-08-17 22:06:11.406165"], ["updated_at", "2020-08-17 22:06:11.406165"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kara Walker"], ["age", 50], ["location", "California"], ["created_at", "2020-08-17 22:06:11.410222"], ["updated_at", "2020-08-17 22:06:11.410222"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Wassily Kandinsky"], ["age", 76], ["location", "Moscow, Russia"], ["created_at", "2020-08-17 22:06:11.415537"], ["updated_at", "2020-08-17 22:06:11.415537"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kerry James Marshall"], ["age", 64], ["location", "Chicago, IL"], ["created_at", "2020-08-17 22:06:11.420787"], ["updated_at", "2020-08-17 22:06:11.420787"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Create (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "age", "location", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Alfaro Siqueiros"], ["age", 64], ["location", "Mexico City, Mexico"], ["created_at", "2020-08-17 22:06:11.426123"], ["updated_at", "2020-08-17 22:06:11.426123"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.7ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "David Geffen"], ["location", "Hollywood"], ["phone_number", "213-552-1966"], ["created_at", "2020-08-17 22:06:11.444401"], ["updated_at", "2020-08-17 22:06:11.444401"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pamela J. Joyner"], ["location", "San Francisco, CA"], ["phone_number", "216-053-1221"], ["created_at", "2020-08-17 22:06:11.449742"], ["updated_at", "2020-08-17 22:06:11.449742"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.5ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Oprah Winfrey"], ["location", "Montecito, CA"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:06:11.454106"], ["updated_at", "2020-08-17 22:06:11.454106"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Francois Pinault"], ["location", "Les Champ-Geraux, France"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:06:11.459847"], ["updated_at", "2020-08-17 22:06:11.459847"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCollector Create (0.4ms)[0m  [1m[32mINSERT INTO "collectors" ("name", "location", "phone_number", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Damien Hirst"], ["location", "Bristol, UK"], ["phone_number", "Private"], ["created_at", "2020-08-17 22:06:11.464026"], ["updated_at", "2020-08-17 22:06:11.464026"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/artists" for ::1 at 2020-08-17 18:06:25 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  [1m[36mArtist Load (2.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.0ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 2]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.1ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 3]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.1ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 4]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.3ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 5]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 6]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (2.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (5.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 7]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (10.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 8]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 10]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 11]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.9ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 12]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 13]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 14]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.8ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 15]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 16]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 17]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 18]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 18]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 19]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 19]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 20]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (3.2ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 20]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 21]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 21]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (10.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 22]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (2.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 22]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 23]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 23]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 24]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 24]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 25]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.7ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 25]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 26]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.3ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 26]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 27]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 27]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 28]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 28]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 29]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 29]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 30]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 30]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 31]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 31]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 32]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 32]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 33]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 33]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 34]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.9ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 34]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 35]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 35]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (9.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 36]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (4.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 36]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 37]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 37]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.8ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 38]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 38]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 39]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 39]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 40]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 40]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 41]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 41]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.7ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 42]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.6ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 42]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.9ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 43]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.3ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 43]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (51.0ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 44]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 44]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 45]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 45]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 46]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.1ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 46]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 47]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 47]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.3ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 48]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.3ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 48]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 49]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.0ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 49]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.6ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 50]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (1.5ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 50]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mArtwork Load (0.4ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 51]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mCollector Load (0.4ms)[0m  [1m[34mSELECT "collectors".* FROM "collectors" INNER JOIN "artworks" ON "collectors"."id" = "artworks"."collector_id" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 51]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (898.93ms)
+Completed 200 OK in 1049ms (Views: 791.6ms | ActiveRecord: 228.8ms | Allocations: 172624)
 
 
