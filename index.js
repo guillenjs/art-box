@@ -1,4 +1,5 @@
 let mainContainer = document.querySelector('.container')
+let menuContainer = document.querySelector('#menu-outer')
 
 
 fetch('http://localhost:3000/artists')
@@ -9,6 +10,7 @@ window.addEventListener('DOMContentLoaded', (evt) => {
     logInForm()
 })
 
+//Creates login form 
 let logInForm = () => {
     let newForm = document.createElement('form')
 
@@ -49,6 +51,50 @@ let loginFormInput = (evt) => {
     })
         .then(res => res.json())
         .then(response => console.log(response))
-    
+    navBar()
 }
+
+//function to render navigation bar
+let navBar = () => {
+    mainContainer.innerHTML = ""
+
+    let navDiv = document.createElement('div')
+        navDiv.className = 'menu'
+    
+    let navUl = document.createElement('ul')
+
+        let navLi1 = document.createElement('li')
+            let liDiv1 = document.createElement('div')
+                liDiv1.className = 'button'
+                liDiv1.innerText = "Profile"
+
+        let navLi2 = document.createElement('li')
+            let liDiv2 = document.createElement('div')
+                liDiv2.className = 'button'
+                liDiv2.innerText = "Featured"
+
+        let navLi3 = document.createElement('li')
+            let liDiv3 = document.createElement('div')
+                liDiv3.className = 'button'
+                liDiv3.innerText = "Logout"
+
+            navLi1.append(liDiv1)
+            navLi2.append(liDiv2)
+            navLi3.append(liDiv3)
+        navUl.append(navLi1, navLi2, navLi3)
+
+        menuContainer.append(navUl)
+}
+
+/* <div id="menu-outer">
+<div class="menu">
+  <ul>
+    <li><div class="button" id="profile">Profile</div></li>
+    <li><div class="button">Featured</div></li>
+    <li><div class="button">Featured</div></li>
+    <li><div class="button">Featured</div></li>
+  </ul>
+</div>
+</div> */
+
 
