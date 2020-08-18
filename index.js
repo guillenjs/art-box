@@ -12,6 +12,9 @@ window.addEventListener('DOMContentLoaded', (evt) => {
 
 //Creates login form 
 let logInForm = () => {
+    let formDiv = document.createElement('div')
+        formDiv.id= 'form'
+
     let newForm = document.createElement('form')
 
     let newInput = document.createElement('input')
@@ -28,7 +31,10 @@ let logInForm = () => {
         newFormButton.innerText = "submit"
 
     newForm.append(newInput, newFormButton)
-    mainContainer.append(newForm)
+    formDiv.append(newForm)
+
+
+    mainContainer.append(formDiv)
 
     newForm.addEventListener("submit", loginFormInput)
 
@@ -51,6 +57,7 @@ let loginFormInput = (evt) => {
     })
         .then(res => res.json())
         .then(response => console.log(response))
+     //Add if statement to check if its true    
     navBar()
 }
 
@@ -84,7 +91,14 @@ let navBar = () => {
         navUl.append(navLi1, navLi2, navLi3)
 
         menuContainer.append(navUl)
+    
+        navLi3.addEventListener('click',  (params) => {
+            menuContainer.innerHTML = ""
+            logInForm()
+        })
 }
+
+//Example of HTML above
 
 /* <div id="menu-outer">
 <div class="menu">
