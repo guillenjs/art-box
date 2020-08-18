@@ -98,7 +98,18 @@ artworks = [
         dimension: "8 ft x 6 ft",
         artist_id: 3,
         collector_id: 4,
-    }]
+    },
+    {
+        name: "Sleepyfoot's Process",
+        price: 100000,
+        medium: "Oil and Sand on Wood Panel",
+        image: "https://www.galleryand.studio/wp-content/uploads/2020/03/Manon-Casimir-Sainton.jpg",
+        availability: true,
+        dimension: "30 in x 30 in",
+        artist_id: 1,
+        collector_id: 1,
+    }
+]
     # ,
 #     {
 #         name: "St.John",
@@ -163,15 +174,6 @@ artworks = [
 #         image: "https://www.bkmotel.org/exhibitions/2020/jg/install/17.jpg",
 #         availability: true,
 #         dimension: "14 in x 11 in"
-#     },
-#     {
-#         name: "Sleepyfoot's Process",
-#         price: 100000,
-#         medium: "Oil and Sand on Wood Panel",
-#         image: "https://www.galleryand.studio/wp-content/uploads/2020/03/Manon-Casimir-Sainton.jpg",
-#         availability: true,
-#         dimension: "30 in x 30 in",
-#         artist_id: "1"
 #     }
 # ]
 

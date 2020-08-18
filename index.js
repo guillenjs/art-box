@@ -56,9 +56,7 @@ let loginFormInput = (evt) => {
         })
     })
         .then(res => res.json())
-        .then(response => 
-            renderProfile(response)
-            )
+        .then(response => renderProfile(response))
     navBar()
   
 }
@@ -84,13 +82,19 @@ let navBar = () => {
 
         let navLi3 = document.createElement('li')
             let liDiv3 = document.createElement('div')
-                liDiv3.className = 'button'
-                liDiv3.innerText = "Logout"
+                    liDiv3.className = 'button'
+                    liDiv3.innerText = "Discover"        
+
+        let navLi4 = document.createElement('li')
+            let liDiv4 = document.createElement('div')
+                liDiv4.className = 'button'
+                liDiv4.innerText = "Logout"
 
             navLi1.append(liDiv1)
             navLi2.append(liDiv2)
             navLi3.append(liDiv3)
-        navUl.append(navLi1, navLi2, navLi3)
+            navLi4.append(liDiv4)
+        navUl.append(navLi1, navLi2, navLi3, navLi4)
 
         menuContainer.append(navUl)
 
@@ -98,40 +102,100 @@ let navBar = () => {
             renderProfile(currentUser)
         })
 
-        navLi3.addEventListener('click',  (params) => {
+        navLi4.addEventListener('click',  (params) => {
             menuContainer.innerHTML = ""
             mainContainer.innerHTML = ""
-            
             logInForm()
         })
 
 }
 
+//Renders profile of current user logged in
    let renderProfile = (artistObj) => {
        currentUser = artistObj
-       mainContainer.innerHTML = ""
-       console.log(currentUser)
+        mainContainer.innerHTML = ""
+
+       console.log(artistObj.artworks[0].image)
  
        let artistDiv = document.createElement('div')
-       let artistDivP = document.createElement('p')
-       artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
-       artistDiv.append(artistDivP)
+       let artistImg = document.createElement('img')
+             //Once there are more images write iteration
+            artistImg.src = artistObj.artworks[0].image
+        let artistDivP = document.createElement('p')
+             artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
+
+       artistDiv.append(artistDivP, artistImg)
        mainContainer.append(artistDiv)
+
+       uploadForm()
    }
         
+//Render form to upload artwork
+ let uploadForm = () => {
+    let formDiv = document.createElement('div')
+        let formBr1 = document.createElement('br')
+        let formBr2 = document.createElement('br')
+        let formBr3 = document.createElement('br')
+        let formBr4 = document.createElement('br')
+        let formBr5 = document.createElement('br')
+
+    let formTag = document.createElement('form')
+    let formInputName = document.createElement('input')
+        formInputName.placeholder = 'name'
+    
+    let formInputPrice = document.createElement('input')
+            formInputPrice.placeholder = 'price'
+
+    let formInputMedium = document.createElement('input')
+            formInputMedium.placeholder = 'medium'
+
+    let formInputImage = document.createElement('input')
+            formInputImage.placeholder = 'image'
+
+    let formInputDim = document.createElement('input')
+            formInputDim.placeholder = 'dimension'
+
+    let formButton = document.createElement('button')
+        formButton.innerText = "Upload"
+        formButton.type = 'submit'
+
+        formTag.append(formInputName, formBr1, 
+            formInputPrice, formBr2, formInputMedium, 
+            formBr3, formInputImage,formBr4,
+            formInputDim, formBr5, formButton )
+
+        formDiv.append(formTag)
+
+        mainContainer.append(formDiv)
+
+        formDiv.addEventListener('submit', (evt) => {
+            evt.preventDefault()
+            console.log(evt.target[0].value)
+            console.log(evt.target[1].value)
+            console.log(evt.target[2].value)
+            console.log(evt.target[3].value)
+            console.log(evt.target[4].value)
+
+            fetch("http://localhost:3000/artworks", {
+                method: "POST",
+                headers: {
+                  "content-type" : "application/json",  
+                },
+                body: JSON.stringify({
+                    name: evt.target[0].value,
+                    price: evt.target[1].value,
+                    medium: evt.target[2].value,
+                    image: evt.target[3].value,
+                    availability: true,
+                    dimension: evt.target[4].value,
+                    artist_id: currentUser.id,
+                    collector_id: 1,
+
+                })
+            })
+        })
+ }  
 
 
-//Example of HTML above
-
-/* <div id="menu-outer">
-<div class="menu">
-  <ul>
-    <li><div class="button" id="profile">Profile</div></li>
-    <li><div class="button">Featured</div></li>
-    <li><div class="button">Featured</div></li>
-    <li><div class="button">Featured</div></li>
-  </ul>
-</div>
-</div> */
 
 
