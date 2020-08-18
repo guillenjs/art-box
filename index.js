@@ -1,6 +1,6 @@
 let mainContainer = document.querySelector('.container')
 let menuContainer = document.querySelector('#menu-outer')
-
+let currentUser = {};
 
 fetch('http://localhost:3000/artists')
 .then(res => res.json())
@@ -50,8 +50,9 @@ let loginFormInput = (evt) => {
         })
     })
         .then(res => res.json())
-        .then(response => console.log(response))
+        .then(response => renderProfile(response))
     navBar()
+    //renderProfile(response)
 }
 
 //function to render navigation bar
@@ -84,7 +85,20 @@ let navBar = () => {
         navUl.append(navLi1, navLi2, navLi3)
 
         menuContainer.append(navUl)
+
+        navLi1.addEventListener('click', (evt) => {
+            console.log('click profile')
+        })
 }
+
+   let renderProfile = (artistObj) => {
+       console.log(artistObj)
+       let artistDiv = document.createElement('div')
+       let artistDivP = document.createElement('p')
+       artistDivP.innerText = `name: ${artistObj.name}, location: ${artistObj.location}`
+       artistDiv.append(artistDivP)
+       mainContainer.append(artistDiv)
+   }
 
 /* <div id="menu-outer">
 <div class="menu">
