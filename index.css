@@ -4,5 +4,13 @@ li {
 
 .button {
     display:inline;
-    padding-right: 20%;
+    padding-right: 10%;
 }
+
+div#form {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

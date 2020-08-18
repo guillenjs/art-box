@@ -12,6 +12,9 @@ window.addEventListener('DOMContentLoaded', (evt) => {
 
 //Creates login form 
 let logInForm = () => {
+    let formDiv = document.createElement('div')
+        formDiv.id= 'form'
+
     let newForm = document.createElement('form')
 
     let newInput = document.createElement('input')
@@ -28,7 +31,10 @@ let logInForm = () => {
         newFormButton.innerText = "submit"
 
     newForm.append(newInput, newFormButton)
-    mainContainer.append(newForm)
+    formDiv.append(newForm)
+
+
+    mainContainer.append(formDiv)
 
     newForm.addEventListener("submit", loginFormInput)
 
@@ -50,9 +56,11 @@ let loginFormInput = (evt) => {
         })
     })
         .then(res => res.json())
-        .then(response => renderProfile(response))
+        .then(response => 
+            renderProfile(response)
+            )
     navBar()
-    //renderProfile(response)
+  
 }
 
 //function to render navigation bar
@@ -87,18 +95,33 @@ let navBar = () => {
         menuContainer.append(navUl)
 
         navLi1.addEventListener('click', (evt) => {
-            console.log('click profile')
+            renderProfile(currentUser)
         })
+
+        navLi3.addEventListener('click',  (params) => {
+            menuContainer.innerHTML = ""
+            mainContainer.innerHTML = ""
+            
+            logInForm()
+        })
+
 }
 
    let renderProfile = (artistObj) => {
-       console.log(artistObj)
+       currentUser = artistObj
+       mainContainer.innerHTML = ""
+       console.log(currentUser)
+ 
        let artistDiv = document.createElement('div')
        let artistDivP = document.createElement('p')
-       artistDivP.innerText = `name: ${artistObj.name}, location: ${artistObj.location}`
+       artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
        artistDiv.append(artistDivP)
        mainContainer.append(artistDiv)
    }
+        
+
+
+//Example of HTML above
 
 /* <div id="menu-outer">
 <div class="menu">
