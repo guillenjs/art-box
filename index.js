@@ -1,6 +1,7 @@
 let mainContainer = document.querySelector('.container')
 let menuContainer = document.querySelector('#menu-outer')
 let currentUser = {};
+let featuredButton = document.querySelector('div.button')
 
 fetch('http://localhost:3000/artists')
 .then(res => res.json())
@@ -99,15 +100,44 @@ let navBar = () => {
         menuContainer.append(navUl)
 
         navLi1.addEventListener('click', (evt) => {
-            renderProfile(currentUser)
+            console.log(hi);
+            //renderProfile(currentUser)
         })
+
+        navLi2.addEventListener('click', (evt) => {
+            console.log(evt);
+            mainContainer.innerHTML = ""
+            fetch('http://localhost:3000/artists')
+            .then(res => res.json())
+            .then((artistArray) => {
+             // console.log(artistArray) 
+             renderFeaturedProfile(artistArray[0])
+        })
+    })
 
         navLi4.addEventListener('click',  (params) => {
             menuContainer.innerHTML = ""
             mainContainer.innerHTML = ""
             logInForm()
         })
+}
 
+let renderFeaturedProfile = (artistObj) => {
+    //console.log(artistObj)
+    mainContainer.innerHTML = ""
+
+   //console.log(artistObj.artworks[0].image)
+
+    let artistDiv = document.createElement('div')
+    let artistImg = document.createElement('img')
+          //Once there are more images write iteration
+     artistImg.src = artistObj.artworks[0].image
+     let artistDivP = document.createElement('p')
+     artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
+
+    artistDiv.append(artistDivP, artistImg)
+    mainContainer.append(artistDiv)
+    
 }
 
 //Renders profile of current user logged in
@@ -115,7 +145,7 @@ let navBar = () => {
        currentUser = artistObj
         mainContainer.innerHTML = ""
 
-       console.log(artistObj.artworks[0].image)
+       //console.log(artistObj.artworks[0].image)
  
        let artistDiv = document.createElement('div')
        let artistImg = document.createElement('img')
