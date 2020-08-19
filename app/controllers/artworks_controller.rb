@@ -5,9 +5,21 @@ class ArtworksController < ApplicationController
         render json: artworks
     end
 
-    def create
-        Artwork.create(artparams)  
+    def show
+        artwork = Artwork.find(params[:id])
+        render json: artwork
     end
+
+    def create
+        newArt = Artwork.create(artparams) 
+        render json: newArt
+    end
+
+    def delete
+        artwork = Artwork.find(params[:id])
+        artwork.destroy
+        render json: artwork
+      end
 
     private
 

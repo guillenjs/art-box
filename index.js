@@ -2,9 +2,9 @@ let mainContainer = document.querySelector('.container')
 let menuContainer = document.querySelector('#menu-outer')
 let currentUser = {};
 
-fetch('http://localhost:3000/artists')
-.then(res => res.json())
-.then(artistArr => console.log(artistArr))
+// fetch('http://localhost:3000/artists')
+// .then(res => res.json())
+// .then(artistArr => console.log(artistArr))
 
 window.addEventListener('DOMContentLoaded', (evt) => {
     logInForm()
@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', (evt) => {
 //Creates login form 
 let logInForm = () => {
     let formDiv = document.createElement('div')
+        formDiv.className = "box"
         formDiv.id= 'form'
 
     let newForm = document.createElement('form')
@@ -115,29 +116,60 @@ let navBar = () => {
        currentUser = artistObj
         mainContainer.innerHTML = ""
 
-       console.log(artistObj.artworks[0].image)
  
        let artistDiv = document.createElement('div')
-       let artistImg = document.createElement('img')
+       let imgDiv = document.createElement('div')
+       imgDiv.className = "grid-container"
+    //    let artistImg = document.createElement('img')
              //Once there are more images write iteration
-            artistImg.src = artistObj.artworks[0].image
+             console.log(currentUser.artworks)
+
+             currentUser.artworks.forEach((artwork) => {
+                        let imgDiv2 = document.createElement('div')
+                        imgDiv2.className = "grid-item"
+
+                 let newImg = document.createElement('img')
+                     newImg.src = artwork.image
+                     newImg.id = artwork.id
+
+                     imgDiv2.append(newImg)
+                    imgDiv.append(imgDiv2)
+
+                     artistDiv.append(imgDiv)
+                     console.log(newImg)
+
+                     newImg.addEventListener('click', (evt) => {
+                         console.log(evt.target.id)
+                        //  deleteImage(evt.target.id, newImg)
+                        renderImageInfo(newImg, artwork)
+
+                     })
+             })
+
+            // artistImg.src = artistObj.artworks[0].image
         let artistDivP = document.createElement('p')
              artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
 
-       artistDiv.append(artistDivP, artistImg)
+        let uploadFormButton = document.createElement('button')
+            uploadFormButton.innerText = "Upload Artwork"
+
+       artistDiv.append(artistDivP, uploadFormButton)
        mainContainer.append(artistDiv)
 
-       uploadForm()
+       uploadFormButton.addEventListener('click', (evt) => {
+           mainContainer.innerHTML = ""
+           menuContainer.innerHTML = ""
+           uploadForm()
+       })
    }
         
 //Render form to upload artwork
  let uploadForm = () => {
     let formDiv = document.createElement('div')
-        let formBr1 = document.createElement('br')
-        let formBr2 = document.createElement('br')
-        let formBr3 = document.createElement('br')
-        let formBr4 = document.createElement('br')
-        let formBr5 = document.createElement('br')
+        formDiv.className = 'box'
+        formDiv.id = 'form'
+
+    let formBr = document.createElement('br')
 
     let formTag = document.createElement('form')
     let formInputName = document.createElement('input')
@@ -159,27 +191,29 @@ let navBar = () => {
         formButton.innerText = "Upload"
         formButton.type = 'submit'
 
-        formTag.append(formInputName, formBr1, 
-            formInputPrice, formBr2, formInputMedium, 
-            formBr3, formInputImage,formBr4,
-            formInputDim, formBr5, formButton )
+    let formButton2 = document.createElement('button')
+        formButton2.innerText = "Cancel"
+
+        formTag.append(formInputName,
+            formInputPrice, formInputMedium, formInputImage,
+            formInputDim, formBr, formButton, formButton2)
 
         formDiv.append(formTag)
+         mainContainer.append(formDiv)
 
-        mainContainer.append(formDiv)
+        formButton2.addEventListener('click', (evt) => {
+           navBar()
+           renderProfile(currentUser)
+        })
 
+        //Fetch to post new artwork submission into Database
         formDiv.addEventListener('submit', (evt) => {
             evt.preventDefault()
-            console.log(evt.target[0].value)
-            console.log(evt.target[1].value)
-            console.log(evt.target[2].value)
-            console.log(evt.target[3].value)
-            console.log(evt.target[4].value)
 
             fetch("http://localhost:3000/artworks", {
                 method: "POST",
                 headers: {
-                  "content-type" : "application/json",  
+                    'Content-Type': 'application/json',  
                 },
                 body: JSON.stringify({
                     name: evt.target[0].value,
@@ -189,12 +223,52 @@ let navBar = () => {
                     availability: true,
                     dimension: evt.target[4].value,
                     artist_id: currentUser.id,
-                    collector_id: 1,
-
                 })
             })
+            .then(response => response.json())
+            .then(newPost => {
+                console.log(newPost.image)
+                navBar()
+                currentUser.artworks.push(newPost)
+                renderProfile(currentUser)   
+            })
         })
- }  
+ } 
+ 
+ let renderImageInfo = (objNode, artObj ) => {
+        console.log(objNode)
+        console.log(artObj)
+
+    mainContainer.innerHTML = ""
+
+    let infoContainer = document.createElement('div')
+        infoContainer.className = "grid-container"
+     
+
+        let infoInner1 = document.createElement('div')
+        infoInner1.className = "grid-item "
+        infoInner1.append(objNode)
+        
+        let infoInner2 = document.createElement('div')
+        infoInner2.className = "grid-item "
+        infoInner2.innerText = `Title: ${artObj.name} || Price: ${artObj.price} || Medium: ${artObj.medium}`
+    
+        infoContainer.append(infoInner1, infoInner2)
+        mainContainer.append(infoContainer)
+ }
+
+
+ let deleteImage = (objId, imgTag) => {
+    //Pass obj id from image event listener
+     // With id do fetch request to delete
+    fetch(`http://localhost:3000/artworks/${objId}`, {
+        method:"DELETE"
+    })
+    .then(res => res.json())
+    .then(empytObj => {console.log(empytObj)
+        imgTag.remove()
+    })
+ }
 
 
 
