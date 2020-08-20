@@ -97,7 +97,6 @@ artworks = [
         availability: true,
         dimension: "8 ft x 6 ft",
         artist_id: 3,
-        collector_id: 4,
     },
     {
         name: "Sleepyfoot's Process",
@@ -107,7 +106,6 @@ artworks = [
         availability: true,
         dimension: "30 in x 30 in",
         artist_id: 1,
-        collector_id: 1,
     }
 ]
     # ,
@@ -180,5 +178,4 @@ artworks = [
 
 Artist.create(artist)
 Collector.create(collector)
-
 Artwork.create(artworks)
