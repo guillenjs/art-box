@@ -3,17 +3,51 @@ let menuContainer = document.querySelector('#menu-outer')
 let currentUser = {};
 let featuredButton = document.querySelector('div.button')
 let discoveredArtDiv = document.querySelector('.art-container')
+let typeOfuser = ""
 
 // fetch('http://localhost:3000/artists')
 // .then(res => res.json())
 // .then(artistArr => console.log(artistArr))
 
 window.addEventListener('DOMContentLoaded', (evt) => {
-    logInForm()
+    artistOrCollector()
+    // logInForm()
 })
+
+//Form that will ask if artist or collector, store into a variable
+let artistOrCollector = () => {
+    let formDiv = document.createElement('div')
+        formDiv.className = "box" 
+        formDiv.id= 'form'
+
+    let artistButton = document.createElement('div')
+        artistButton.className = 'btn'
+        artistButton.innerText = "Artist"
+
+    let collectorButton = document.createElement('div')
+        collectorButton.className = 'btn'
+        collectorButton.innerText = "Collector"
+
+
+    artistButton.addEventListener('click', (evt) => {
+        typeOfuser = evt.target.innerText
+        logInForm()
+    })
+
+    collectorButton.addEventListener('click', (evt) => {
+        typeOfuser = evt.target.innerText
+        logInForm()
+    })
+    
+    formDiv.append(artistButton, collectorButton)
+    mainContainer.append(formDiv)
+
+}
 
 //Creates login form 
 let logInForm = () => {
+    console.log(typeOfuser)
+    // mainContainer = ""
     let formDiv = document.createElement('div')
         formDiv.className = "box"
         formDiv.id= 'form'
@@ -40,28 +74,42 @@ let logInForm = () => {
     mainContainer.append(formDiv)
 
     newForm.addEventListener("submit", loginFormInput)
-
 }
 
 //newForm evt passed in as argument to run search function of user
 let loginFormInput = (evt) => {
     evt.preventDefault()
-        console.log("i am inside")
+      
     let username = evt.target.username.value
     
-    fetch("http://localhost:3000/artists/login", {
-        method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
-        body: JSON.stringify({
-            userLogin: username
+    if (typeOfuser === "Artist"){
+        fetch("http://localhost:3000/artists/login", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                userLogin: username
+            })
         })
-    })
-        .then(res => res.json())
-        .then(response => renderProfile(response))
-    navBar()
-  
+            .then(res => res.json())
+            .then(response => renderProfile(response))
+        navBar()
+    }
+    else {
+        fetch("http://localhost:3000/collectors/login", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({
+                userLogin: username
+            })
+        })
+            .then(res => res.json())
+            .then(response => console.log(response))
+        navBar()
+    }
 }
 
 //function to render navigation bar
@@ -222,11 +270,13 @@ let renderFeaturedProfile = (artistObj) => {
        let artistDiv = document.createElement('div')
        let imgDiv = document.createElement('div')
        imgDiv.className = "grid-container"
+    
     //    let artistImg = document.createElement('img')
              //Once there are more images write iteration
              //console.log(currentUser.artworks)
 
              currentUser.artworks.forEach((artwork) => {
+              
                         let imgDiv2 = document.createElement('div')
                         imgDiv2.className = "grid-item"
 
@@ -255,14 +305,23 @@ let renderFeaturedProfile = (artistObj) => {
         let uploadFormButton = document.createElement('button')
             uploadFormButton.innerText = "Upload Artwork"
 
-       artistDiv.append(artistDivP, uploadFormButton)
-       mainContainer.append(artistDiv)
+            uploadFormButton.addEventListener('click', (evt) => {
+                mainContainer.innerHTML = ""
+                menuContainer.innerHTML = ""
+                uploadForm()
+            })
 
-       uploadFormButton.addEventListener('click', (evt) => {
-           mainContainer.innerHTML = ""
-           menuContainer.innerHTML = ""
-           uploadForm()
-       })
+       if (typeOfuser === "Artist") {     
+            artistDiv.append(artistDivP, uploadFormButton)
+            mainContainer.append(artistDiv)
+       } 
+       else {
+           console.log('HELLO')
+        //    artistDiv.innerText = 'HELLO'
+        //  mainContainer.append(artistDiv, imgDiv)
+       }
+
+     
    }
         
 //Render form to upload artwork
@@ -337,6 +396,7 @@ let renderFeaturedProfile = (artistObj) => {
         })
  } 
  
+ //render singular image that shows info when clicked 
  let renderImageInfo = (objNode, artObj ) => {
         console.log(objNode)
         console.log(artObj)
@@ -354,12 +414,22 @@ let renderFeaturedProfile = (artistObj) => {
         let infoInner2 = document.createElement('div')
         infoInner2.className = "grid-item "
         infoInner2.innerText = `Title: ${artObj.name} || Price: ${artObj.price} || Medium: ${artObj.medium}`
+        
+
+        let deleteButton = document.createElement('button')
+            deleteButton.innerText = "Delete Artwork"
+            infoInner2.append(deleteButton)
+
+            deleteButton.addEventListener('click', (evt) => {
+                deleteImage(artObj.id, objNode)
+                console.log(artObj.id, objNode)
+            })
     
         infoContainer.append(infoInner1, infoInner2)
         mainContainer.append(infoContainer)
  }
 
-
+//deletes an image but currently not functioning
  let deleteImage = (objId, imgTag) => {
     //Pass obj id from image event listener
      // With id do fetch request to delete
@@ -368,7 +438,10 @@ let renderFeaturedProfile = (artistObj) => {
     })
     .then(res => res.json())
     .then(empytObj => {console.log(empytObj)
+        // currentUser.artworks.objId.remove()
+        renderProfile(currentUser)
         imgTag.remove()
+        //figure out how to update delete to the dome cause currently it is not
     })
  }
 

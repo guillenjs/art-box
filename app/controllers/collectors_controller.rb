@@ -4,4 +4,14 @@ class CollectorsController < ApplicationController
         @collector = Collector.all 
         render json: @collector
     end
+
+    def login
+     
+        collector = Collector.find_by(name: params[:userLogin])
+        byebug
+        if collector 
+            render json: collector
+        end 
+    end
+
 end
