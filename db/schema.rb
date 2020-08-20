@@ -31,11 +31,9 @@ ActiveRecord::Schema.define(version: 2020_08_16_184249) do
     t.boolean "availability"
     t.string "dimension"
     t.bigint "artist_id", null: false
-    t.bigint "collector_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_artworks_on_artist_id"
-    t.index ["collector_id"], name: "index_artworks_on_collector_id"
   end
 
   create_table "collectors", force: :cascade do |t|
@@ -47,5 +45,4 @@ ActiveRecord::Schema.define(version: 2020_08_16_184249) do
   end
 
   add_foreign_key "artworks", "artists"
-  add_foreign_key "artworks", "collectors"
 end

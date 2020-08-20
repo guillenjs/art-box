@@ -8,7 +8,7 @@ class CreateArtworks < ActiveRecord::Migration[6.0]
       t.boolean :availability
       t.string :dimension
       t.references :artist, null: false, foreign_key: true
-      t.references :collector, null: false, foreign_key: true
+      
 
       t.timestamps
     end
