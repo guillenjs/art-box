@@ -150,8 +150,8 @@ let navBar = () => {
         menuContainer.append(navUl)
 
         navLi1.addEventListener('click', (evt) => {
-            console.log("hi");
-            //renderProfile(currentUser)
+           // console.log("hi");
+            renderProfile(currentUser)
         })
 
         navLi2.addEventListener('click', (evt) => {
@@ -439,6 +439,11 @@ let renderFeaturedProfile = (artistObj) => {
     .then(res => res.json())
     .then(empytObj => {console.log(empytObj)
         // currentUser.artworks.objId.remove()
+        
+       let deletedArray = currentUser.artworks.filter((art) => {
+            return art.id !== empytObj.id
+        })
+        currentUser.artworks = deletedArray
         renderProfile(currentUser)
         imgTag.remove()
         //figure out how to update delete to the dome cause currently it is not
