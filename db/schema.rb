@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_16_184249) do
+ActiveRecord::Schema.define(version: 2020_08_20_163025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,5 +44,16 @@ ActiveRecord::Schema.define(version: 2020_08_16_184249) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "artwork_id", null: false
+    t.bigint "collector_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_favorites_on_artwork_id"
+    t.index ["collector_id"], name: "index_favorites_on_collector_id"
+  end
+
   add_foreign_key "artworks", "artists"
+  add_foreign_key "favorites", "artworks"
+  add_foreign_key "favorites", "collectors"
 end
