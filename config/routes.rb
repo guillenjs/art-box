@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
  
+<<<<<<< HEAD
   resources :favorites
+=======
+>>>>>>> b4b65f6efa651c36b1344169500b182addd00e80
   # resources :artworks
   get '/artists', to: 'artists#index'
   get '/collectors', to: 'collectors#index'
