@@ -2,7 +2,9 @@ body {
   background-image: linear-gradient(80deg, #fdfbfb 0%, #ebedee 100%);
 }
 
-
+div.a {
+  text-align: left;
+}
 
 .box {
   width: 300px;

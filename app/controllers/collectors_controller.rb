@@ -8,7 +8,7 @@ class CollectorsController < ApplicationController
     def login
      
         collector = Collector.find_by(name: params[:userLogin])
-        byebug
+    
         if collector 
             render json: collector
         end 

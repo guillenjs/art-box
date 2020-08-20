@@ -181,7 +181,7 @@ let navBar = () => {
         navLi4.addEventListener('click',  (params) => {
             menuContainer.innerHTML = ""
             mainContainer.innerHTML = ""
-            logInForm()
+            artistOrCollector()
         })
 }
 let renderDiscovered = (artistArray) => {
@@ -413,17 +413,63 @@ let renderFeaturedProfile = (artistObj) => {
         
         let infoInner2 = document.createElement('div')
         infoInner2.className = "grid-item "
-        infoInner2.innerText = `Title: ${artObj.name} || Price: ${artObj.price} || Medium: ${artObj.medium}`
-        
+        infoInner2.innerHTML =  `<div class = "a">
+            <b>Title:</b> ${artObj.name} <br>
+            <b>Price:</b> $${artObj.price} <br>
+            <b>Medium:</b> ${artObj.medium}<br>
+            <b>Dimension:</b> ${artObj.dimension}
+        </div>`
+       
+        let updateButton = document.createElement('button')
+            updateButton.innerText = "Update"
+            infoInner2.append(updateButton)
 
         let deleteButton = document.createElement('button')
-            deleteButton.innerText = "Delete Artwork"
+            deleteButton.innerText = "Delete"
             infoInner2.append(deleteButton)
 
             deleteButton.addEventListener('click', (evt) => {
                 deleteImage(artObj.id, objNode)
                 console.log(artObj.id, objNode)
             })
+
+            updateButton.addEventListener('click', (evt) => {
+                // updateArt()
+                let br1 = document.createElement('br')
+                let br2 = document.createElement('br')
+                let br3 = document.createElement('br')
+
+                let infoInner3 = document.createElement('div')
+                    infoInner3.className = "grid-item "
+                   
+                let formContainer = document.createElement('div')
+                        formContainer.className = "box2"
+                        formContainer.id = "form2"
+                let formTag = document.createElement('form')
+
+                let formInputName = document.createElement('input')
+                            formInputName.value = artObj.name
+                        
+                let formInputPrice = document.createElement('input')
+                     formInputPrice.value = artObj.price
+
+                let formInputMedium = document.createElement('input')
+                    formInputMedium.value = artObj.medium
+                
+                let formButton = document.createElement('button')
+                        formButton.innerText = "Update"
+                        formButton.type = 'submit'
+
+                    formButton.addEventListener('submit', (evt) => {
+                        console.log('updateButton')
+                    })
+                        
+                        formTag.append(formInputName,br1, formInputPrice, br2, formInputMedium, br3, formButton)
+                        formContainer.append(formTag)
+                        infoInner3.append(formContainer)
+                        infoContainer.append(infoInner1, infoInner2, infoInner3)
+                        mainContainer.append(infoContainer)
+                })
     
         infoContainer.append(infoInner1, infoInner2)
         mainContainer.append(infoContainer)
@@ -448,6 +494,11 @@ let renderFeaturedProfile = (artistObj) => {
         imgTag.remove()
         //figure out how to update delete to the dome cause currently it is not
     })
+ }
+
+
+ let updateArt = (name, price, medium) => {
+
  }
 
 
