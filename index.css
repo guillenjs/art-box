@@ -2,6 +2,8 @@ body {
   background-image: linear-gradient(80deg, #fdfbfb 0%, #ebedee 100%);
 }
 
+
+
 .box {
   width: 300px;
   padding: 40px;
@@ -16,7 +18,8 @@ body {
 }
 
 div#form {
-  position: absolute;
+  
+position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
@@ -29,6 +32,21 @@ transform: translate(-50%, -50%);
   border: none;
 }
 
+.btn {
+  border: 2px solid rgb(167, 167, 167);;
+  border-radius: 5px;
+  background-color: rgb(180, 180, 180);
+  margin-top: 2%;
+  transition-duration: 0.4s;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.btn:hover {
+  background-color: #757575; /* Green */
+  color: white;
+}
+
 .login-btn {
   border: none;
   border-radius: 5px;
@@ -36,19 +54,28 @@ transform: translate(-50%, -50%);
 }
 
 
-
 li {
     display:inline;
 }
 
-.button {
-    display:inline;
-    padding-right: 10%;
+li div:hover {
+  /* background-color: rgb(255, 255, 255); */
+  font-weight: bold; 
 }
 
 
+.button {
+    display:inline;
+    color: rgb(20, 20, 20);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    /* font-weight: bold; */
+}
+
 img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
     filter: drop-shadow(10px 15px 15px #a0a0a0);
   }
