@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
  
+  # resources :favorites
   # resources :artworks
   get '/artists', to: 'artists#index'
   get '/collectors', to: 'collectors#index'

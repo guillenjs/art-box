@@ -1,6 +1,8 @@
 let mainContainer = document.querySelector('.container')
 let menuContainer = document.querySelector('#menu-outer')
 let currentUser = {};
+let featuredButton = document.querySelector('div.button')
+let discoveredArtDiv = document.querySelector('.art-container')
 
 // fetch('http://localhost:3000/artists')
 // .then(res => res.json())
@@ -100,15 +102,114 @@ let navBar = () => {
         menuContainer.append(navUl)
 
         navLi1.addEventListener('click', (evt) => {
-            renderProfile(currentUser)
+            console.log("hi");
+            //renderProfile(currentUser)
         })
+
+        navLi2.addEventListener('click', (evt) => {
+            //console.log(evt);
+            mainContainer.innerHTML = ""
+            fetch('http://localhost:3000/artists')
+            .then(res => res.json())
+            .then((artistArray) => {
+             // console.log(artistArray) 
+             renderFeaturedProfile(artistArray[0])
+        })
+    })
+
+    navLi3.addEventListener('click', (evt) => {
+        console.log(evt);
+        mainContainer.innerHTML = ""
+        fetch('http://localhost:3000/artists')
+        .then(res => res.json())
+        .then((artistArray) => {
+         // console.log(artistArray) 
+         artistArray.forEach((artistObj) => {
+         renderDiscovered(artistObj)
+         })
+    })
+})
 
         navLi4.addEventListener('click',  (params) => {
             menuContainer.innerHTML = ""
             mainContainer.innerHTML = ""
             logInForm()
         })
+}
+let renderDiscovered = (artistArray) => {
+    //console.log(artistArray[0]);
+    let discoveredArtDiv = document.createElement('div')
+    discoveredArtDiv.className = "artist-container"
+    let discoveredArtList = document.createElement('ul')
 
+    let discoveredArtLi1 = document.createElement('li')
+    discoveredArtLi1.innerText = artistArray.name
+    let br1 = document.createElement('br')
+
+    discoveredArtDiv.addEventListener('click', (evt) => {
+        console.log(evt)
+    })
+
+   
+
+   /* let discoveredArtLi5 = document.createElement('li')
+    discoveredArtLi5.innerText = artistArray[4].name
+    let br5 = document.createElement('br')
+
+    let discoveredArtLi6 = document.createElement('li')
+    discoveredArtLi6.innerText = artistArray[5].name
+    let br6 = document.createElement('br')
+
+    let discoveredArtLi7 = document.createElement('li')
+    discoveredArtLi7.innerText = artistArray[6].name
+    let br7 = document.createElement('br')
+
+    let discoveredArtLi8 = document.createElement('li')
+    discoveredArtLi8.innerText = artistArray[7].name
+    let br8 = document.createElement('br')
+
+    let discoveredArtLi9 = document.createElement('li')
+    discoveredArtLi9.innerText = artistArray[8].name
+    let br9 = document.createElement('br')
+
+    let discoveredArtLi10 = document.createElement('li')
+    discoveredArtLi10.innerText = artistArray[9].name */
+    
+
+    //let artistDisDiv = document.createElement('div')
+     /*  let imgDisDiv = document.createElement('div')
+       imgDisDiv.className = "grid-container"
+          
+        let imgDisDiv2 = document.createElement('div')
+        imgDisDiv2.className = "grid-item"
+       })
+    })
+
+    
+    imgDisDiv2.append(discoveredArtDiv)
+    imgDisDiv.append(imgDisDiv2)
+   // artistDisDiv.append(imgDisDiv) */
+    discoveredArtList.append(discoveredArtLi1, br1)
+    discoveredArtDiv.append(discoveredArtList)
+    mainContainer.append(discoveredArtDiv)
+}
+
+let renderFeaturedProfile = (artistObj) => {
+    //console.log(artistObj)
+    mainContainer.innerHTML = ""
+
+   //console.log(artistObj.artworks[0].image)
+
+    let artistDiv = document.createElement('div')
+    let artistImg = document.createElement('img')
+          //Once there are more images write iteration
+     artistImg.src = artistObj.artworks[0].image
+     let artistDivP = document.createElement('p')
+     artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
+
+    artistDiv.append(artistDivP, artistImg)
+    mainContainer.append(artistDiv)
+    
 }
 
 //Renders profile of current user logged in
@@ -116,13 +217,14 @@ let navBar = () => {
        currentUser = artistObj
         mainContainer.innerHTML = ""
 
+       //console.log(artistObj.artworks[0].image)
  
        let artistDiv = document.createElement('div')
        let imgDiv = document.createElement('div')
        imgDiv.className = "grid-container"
     //    let artistImg = document.createElement('img')
              //Once there are more images write iteration
-             console.log(currentUser.artworks)
+             //console.log(currentUser.artworks)
 
              currentUser.artworks.forEach((artwork) => {
                         let imgDiv2 = document.createElement('div')

@@ -68,4 +68,6 @@ img {
     text-align: center;
   
   }
-
+.artist-container {
+  font-weight: bold;
+}
