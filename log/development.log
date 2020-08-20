@@ -22627,3 +22627,26 @@ FOREIGN KEY ("artist_id")
   [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mArtwork Create (0.6ms)[0m  [1m[32mINSERT INTO "artworks" ("name", "price", "medium", "image", "availability", "dimension", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sleepyfoot's Process"], ["price", 100000], ["medium", "Oil and Sand on Wood Panel"], ["image", "https://www.galleryand.studio/wp-content/uploads/2020/03/Manon-Casimir-Sainton.jpg"], ["availability", true], ["dimension", "30 in x 30 in"], ["artist_id", 1], ["created_at", "2020-08-19 22:21:05.965122"], ["updated_at", "2020-08-19 22:21:05.965122"]]
   [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/artists/login" for ::1 at 2020-08-20 12:57:00 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#login as */*
+  Parameters: {"userLogin"=>"Sleepyfoot?", "artist"=>{}}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Sleepyfoot?"], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:14:in `login'
+[active_model_serializers]   [1m[36mArtwork Load (1.1ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:16:in `login'
+[active_model_serializers] Rendered ArtistSerializer with ActiveModelSerializers::Adapter::Attributes (101.38ms)
+Completed 200 OK in 219ms (Views: 86.1ms | ActiveRecord: 128.1ms | Allocations: 19182)
+
+
+Started POST "/artists/login" for ::1 at 2020-08-20 12:57:07 -0400
+Processing by ArtistsController#login as */*
+  Parameters: {"userLogin"=>"Sleepyfoot?", "artist"=>{}}
+  [1m[36mArtist Load (2.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Sleepyfoot?"], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:14:in `login'
+[active_model_serializers]   [1m[36mArtwork Load (3.5ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 1]]
+[active_model_serializers]   ↳ app/controllers/artists_controller.rb:16:in `login'
+[active_model_serializers] Rendered ArtistSerializer with ActiveModelSerializers::Adapter::Attributes (7.76ms)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 6.2ms | Allocations: 2697)
+
+
