@@ -3,6 +3,13 @@ body {
  /* background-image: linear-gradient(80deg, #fdfbfb 0%, #ebedee 100%); */
 }
 
+h1 {
+ 
+  padding-bottom: 5%;
+  padding-top: 5%;
+  padding-left: 10%;
+}
+
 div.a {
   text-align: left;
 }
