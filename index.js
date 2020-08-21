@@ -188,7 +188,6 @@ let navBar = () => {
         })
 }
 let renderDiscovered = (artistArray) => {
-   
     let artDisDiv = document.createElement('div')
         artDisDiv.className = "grid-container"
         

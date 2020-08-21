@@ -1,5 +1,6 @@
 body {
-  background-image: linear-gradient(80deg, #fdfbfb 0%, #ebedee 100%);
+  background-color: white;
+ /* background-image: linear-gradient(80deg, #fdfbfb 0%, #ebedee 100%); */
 }
 
 h1 {
@@ -98,12 +99,24 @@ img {
   }
   .grid-item {
     background-color: #f1f1f1;
-    border: 1px solid #f1f1f1;
+    border: 1px solid black;
     padding: 10px;
-    font-size: 20px;
+    font-size: 16px;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+    border-style: solid;
   
   }
 .artist-container {
   font-weight: bold;
+}
+
+div#menu-outer {
+  font-weight: bold;
+  font-size: large;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h1 {
+  text-align: center;
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
