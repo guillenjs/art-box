@@ -51,8 +51,18 @@ transform: translate(-50%, -50%);
 }
 
 .btn:hover {
-  background-color: #757575; /* Green */
+  background-color: #757575;
   color: white;
+}
+
+.btn2 {
+  border: 2px solid rgb(167, 167, 167);;
+  border-radius: 5px;
+  background-color: rgb(180, 180, 180);
+  margin-top: 2%;
+  transition-duration: 0.4s;
+  width: 25%;
+  /* margin-left: 25%; */
 }
 
 .login-btn {
@@ -105,4 +115,55 @@ img {
   }
 .artist-container {
   font-weight: bold;
+}
+
+p {
+  text-align: center;
+}
+
+.picture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.buttonstyle {
+  display: inline-block;
+  padding: 0px 5px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #88a5f7;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 10px #999;
+}
+
+.buttonstyle:hover {
+  background-color: #789af7;
+  color: white;
+}
+
+.buttonstyle2 {
+  display: inline-block;
+  padding: 0px 5px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #f78888;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 10px #999;
+}
+
+.buttonstyle2:hover {
+  background-color: #f77878;
+  color: white;
 }

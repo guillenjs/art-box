@@ -11,10 +11,10 @@ class ArtworksController < ApplicationController
     end
 
     def update
-        byebug
+       
         artwork = Artwork.find(params[:id])
         artwork.update(updateparams)
-        
+
         render json: artwork
         
     end

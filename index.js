@@ -200,7 +200,8 @@ let renderDiscovered = (artistArray) => {
         innerDisDivLi.innerText = artistObj.name
 
         let likeButton = document.createElement('button')
-        likeButton.innerText = "Favorite"
+        likeButton.innerText = "Favorite ❤️"
+        likeButton.className = "buttonstyle"
 
         let br = document.createElement('br')
         
@@ -225,17 +226,19 @@ let renderDiscovered = (artistArray) => {
 
 }
 
-let discoverToFeatured = (artistObj) => {
-    mainContainer.innerHTML = ""
-    let artistDiv = document.createElement('div')
-    let artistImg = document.createElement('img')
+// let discoverToFeatured = (artistObj) => {
+//     mainContainer.innerHTML = ""
+//     let artistDiv = document.createElement('div')
+//     let artistImg = document.createElement('img')
     
-     let artistDivP = document.createElement('p')
-     artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
+//      let artistDivP = document.createElement('p')
+//     //  artistDivP.innerHTML = `<h2> ${artistObj.name}</h2><br>
+//     //  <h1> ${artistObj.location}</h1>`
+    
 
-    artistDiv.append(artistDivP, artistImg)
-    mainContainer.append(artistDiv) 
-}
+//     artistDiv.append(artistDivP, artistImg)
+//     mainContainer.append(artistDiv) 
+// }
 
 let addLike = (artwork, collector) => {
     
@@ -269,10 +272,12 @@ let renderFeaturedProfile = (artistObj) => {
 
     let artistDiv = document.createElement('div')
     let artistImg = document.createElement('img')
+        artistImg.className = "picture"
           //Once there are more images write iteration
    artistImg.src = artistObj.artworks[0].image
      let artistDivP = document.createElement('p')
-     artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
+        artistDivP.className = "featured"
+     artistDivP.innerHTML = `<h3> ${artistObj.name}</h3> <h4> ${artistObj.location}</h4><br><button class="btn2"><a href = "mailto: bestartist@example.com">Contact</a></button>`
 
     artistDiv.append(artistDivP, artistImg)
     mainContainer.append(artistDiv)
@@ -319,10 +324,11 @@ let renderFeaturedProfile = (artistObj) => {
 
             // artistImg.src = artistObj.artworks[0].image
         let artistDivP = document.createElement('p')
-             artistDivP.innerText = `name: ${artistObj.name} || location: ${artistObj.location}`
+             artistDivP.innerHTML = `<h4>${artistObj.name} || ${artistObj.location}</h4>`
 
         let uploadFormButton = document.createElement('button')
             uploadFormButton.innerText = "Upload Artwork"
+            uploadFormButton.className = "buttonstyle"
 
             uploadFormButton.addEventListener('click', (evt) => {
                 mainContainer.innerHTML = ""
@@ -395,10 +401,12 @@ let renderCollector = (user) => {
 
     let formButton = document.createElement('button')
         formButton.innerText = "Upload"
+        formButton.className = "buttonstyle"
         formButton.type = 'submit'
 
     let formButton2 = document.createElement('button')
         formButton2.innerText = "Cancel"
+        formButton2.className = "buttonstyle2"
 
         formTag.append(formInputName,
             formInputPrice, formInputMedium, formInputImage,
