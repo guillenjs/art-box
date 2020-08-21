@@ -1,5 +1,5 @@
 class Collector < ApplicationRecord
-  
+  has_many :favorites
     
 
 end

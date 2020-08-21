@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   post '/artworks', to: 'artworks#create'
   delete '/artworks/:id', to: 'artworks#delete'
 
+<<<<<<< HEAD
   get '/artists/random', to: "artists#random"
+=======
+  get '/favorites', to: 'favorites#index'
+  post '/favorites', to: 'favorites#create'
+>>>>>>> update
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

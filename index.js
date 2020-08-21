@@ -1,8 +1,8 @@
 let mainContainer = document.querySelector('.container')
 let menuContainer = document.querySelector('#menu-outer')
 let currentUser = {};
-let featuredButton = document.querySelector('div.button')
-let discoveredArtDiv = document.querySelector('.art-container')
+// let featuredButton = document.querySelector('div.button')
+// let discoveredArtDiv = document.querySelector('.art-container')
 let typeOfuser = ""
 
 // fetch('http://localhost:3000/artists')
@@ -59,11 +59,9 @@ let logInForm = () => {
         newInput.id = 'username'
         newInput.placeholder = 'Username'
         
-
-
-        let newFormButton = document.createElement('button')
-            newFormButton.type = 'submit'
-            newFormButton.className = 'login-btn'
+    let newFormButton = document.createElement('button')
+        newFormButton.type = 'submit'
+         newFormButton.className = 'login-btn'
 
         newFormButton.innerText = "submit"
 
@@ -107,7 +105,7 @@ let loginFormInput = (evt) => {
             })
         })
             .then(res => res.json())
-            .then(response => console.log(response))
+            .then(response => renderCollector(response))
         navBar()
     }
 }
@@ -151,7 +149,12 @@ let navBar = () => {
 
         navLi1.addEventListener('click', (evt) => {
            // console.log("hi");
-            renderProfile(currentUser)
+           if (typeOfuser != "Collector" ){
+            return renderProfile(currentUser)
+           }
+           else{
+            return renderCollector(currentUser)
+           }
         })
 
         navLi2.addEventListener('click', (evt) => {
@@ -181,10 +184,11 @@ let navBar = () => {
         navLi4.addEventListener('click',  (params) => {
             menuContainer.innerHTML = ""
             mainContainer.innerHTML = ""
-            logInForm()
+            artistOrCollector()
         })
 }
 let renderDiscovered = (artistArray) => {
+<<<<<<< HEAD
    
     let artDisDiv = document.createElement('div')
         artDisDiv.className = "grid-container"
@@ -231,7 +235,44 @@ let discoverToFeatured = (artistObj) => {
 
     artistDiv.append(artistDivP, artistImg)
     mainContainer.append(artistDiv) 
+=======
+    //console.log(artistArray[0]);
+    
+    let discoveredArtDiv = document.createElement('div')
+    discoveredArtDiv.className = "artist-container"
+    let discoveredArtList = document.createElement('ul')
+
+    let discoveredArtLi1 = document.createElement('li')
+    discoveredArtLi1.innerText = artistArray.name
+    let br1 = document.createElement('br')
+
+    discoveredArtDiv.addEventListener('click', (evt) => {
+        console.log(artistArray.artworks[0])
+        console.log(currentUser)
+        addLike(artistArray, currentUser)
+    })
+
+    discoveredArtList.append(discoveredArtLi1, br1)
+    discoveredArtDiv.append(discoveredArtList)
+    mainContainer.append(discoveredArtDiv)
+>>>>>>> update
 }
+
+let addLike = (artwork, collector) => {
+    
+    fetch('http://localhost:3000/favorites', {
+        method: "POST",
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            artwork_id: artwork.id,
+            collector_id: collector.id,
+        })
+    })
+}
+
+
 
 let renderFeaturedProfile = (artistObj) => {
     //console.log(artistObj)
@@ -301,19 +342,30 @@ let renderFeaturedProfile = (artistObj) => {
                 menuContainer.innerHTML = ""
                 uploadForm()
             })
-
-       if (typeOfuser === "Artist") {     
+ 
             artistDiv.append(artistDivP, uploadFormButton)
             mainContainer.append(artistDiv)
-       } 
-       else {
-           console.log('HELLO')
-        //    artistDiv.innerText = 'HELLO'
-        //  mainContainer.append(artistDiv, imgDiv)
-       }
-
-     
+    
+       
    }
+
+let renderCollector = (user) => {
+    currentUser = user
+    mainContainer.innerHTML = ""
+
+    let collectorDiv1 = document.createElement('div')
+        collectorDiv1.className = "grid-container"
+
+        let collectorDiv2 = document.createElement('div')
+        collectorDiv2.className = "grid-item"
+            collectorDiv2.innerHTML = `<h3>${user.name}</h3><br>${user.location}<br>${user.phone_number}`
+                
+        let collectorDiv3 = document.createElement('div')
+        collectorDiv3.className = "grid-item"
+
+    collectorDiv1.append(collectorDiv2, collectorDiv3)
+    mainContainer.append(collectorDiv1)
+}
         
 //Render form to upload artwork
  let uploadForm = () => {
@@ -404,17 +456,75 @@ let renderFeaturedProfile = (artistObj) => {
         
         let infoInner2 = document.createElement('div')
         infoInner2.className = "grid-item "
-        infoInner2.innerText = `Title: ${artObj.name} || Price: ${artObj.price} || Medium: ${artObj.medium}`
-        
+        infoInner2.innerHTML =  `<div class = "a">
+            <b>Title:</b> ${artObj.name} <br>
+            <b>Price:</b> $${artObj.price} <br>
+            <b>Medium:</b> ${artObj.medium}<br>
+            <b>Dimension:</b> ${artObj.dimension}
+        </div>`
+       
+        let updateButton = document.createElement('button')
+            updateButton.innerText = "Update"
+            infoInner2.append(updateButton)
 
         let deleteButton = document.createElement('button')
-            deleteButton.innerText = "Delete Artwork"
+            deleteButton.innerText = "Delete"
             infoInner2.append(deleteButton)
 
             deleteButton.addEventListener('click', (evt) => {
                 deleteImage(artObj.id, objNode)
                 console.log(artObj.id, objNode)
             })
+
+            updateButton.addEventListener('click', (evt) => {
+                // updateArt()
+                let br1 = document.createElement('br')
+                let br2 = document.createElement('br')
+                let br3 = document.createElement('br')
+
+                let infoInner3 = document.createElement('div')
+                    infoInner3.className = "grid-item "
+                   
+                let formContainer = document.createElement('div')
+                        formContainer.className = "box2"
+                        formContainer.id = "form2"
+                let formTag = document.createElement('form')
+
+                let formInputName = document.createElement('input')
+                            formInputName.value = artObj.name
+                        
+                let formInputPrice = document.createElement('input')
+                     formInputPrice.value = artObj.price
+
+                let formInputMedium = document.createElement('input')
+                    formInputMedium.value = artObj.medium
+                
+                let formButton = document.createElement('button')
+                        formButton.innerText = "Update"
+                        // formButton.type = 'click'
+                let cancelButton = document.createElement('button')
+                    cancelButton.innerText = "Cancel"
+                    
+
+                    formButton.addEventListener('click', (evt) => {
+                        evt.preventDefault()
+                        console.log('updateButton')
+                        //create a fetch that patches artwork
+                    })
+
+                    cancelButton.addEventListener('click', (evt) => {
+                        evt.preventDefault()
+                        console.log('cancel')
+                        // infoContainer.append(infoInner1, infoInner2)
+                        //  mainContainer.append(infoContainer)
+                    })  
+                        
+                        formTag.append(formInputName,br1, formInputPrice, br2, formInputMedium, br3, formButton, cancelButton)
+                        formContainer.append(formTag)
+                        infoInner3.append(formContainer)
+                        infoContainer.append(infoInner1, infoInner2, infoInner3)
+                        mainContainer.append(infoContainer)
+                })
     
         infoContainer.append(infoInner1, infoInner2)
         mainContainer.append(infoContainer)
@@ -439,6 +549,13 @@ let renderFeaturedProfile = (artistObj) => {
         imgTag.remove()
         //figure out how to update delete to the dome cause currently it is not
     })
+ }
+
+
+ let updateArt = (name, price, medium) => {
+    //This function will be called by the update event listener in artwork
+    // THis will fetch patch artwork information
+    // I believe and update route needs to be created
  }
 
 

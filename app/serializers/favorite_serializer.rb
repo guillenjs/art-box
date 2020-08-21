@@ -1,5 +1,5 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  //attributes :id
-  //has_one :artwork
-  //has_one :collector
+  attributes :id, :artwork_id, :collector_id
+  has_one :artwork
+  # has_one :collector
 end
