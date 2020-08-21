@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   get '/artworks', to: 'artworks#index'
   get '/artworks/:id', to: 'artworks#show'
   post '/artworks', to: 'artworks#create'
+  patch "/artworks/:id", to: "artworks#update"
   delete '/artworks/:id', to: 'artworks#delete'
 
   # get '/artists/random', to: "artists#random"
   get '/favorites', to: 'favorites#index'
   post '/favorites', to: 'favorites#create'
+  get '/favorites/:id', to: 'favorites#show'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

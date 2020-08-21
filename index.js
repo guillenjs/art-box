@@ -213,7 +213,8 @@ let renderDiscovered = (artistArray) => {
 
         likeButton.addEventListener("click", (evt) => {
             console.log("likeButton")
-           // discoverToFeatured(artistArray)
+           addLike(artistObj, currentUser)
+
         })
     })
         
@@ -248,6 +249,14 @@ let addLike = (artwork, collector) => {
             collector_id: collector.id,
         })
     })
+        .then(res => res.json())
+        .then(newLike => {
+
+            currentUser.favorites.push(newLike)
+            renderCollector(currentUser)
+ ////////////Fix when put on DOM////////////////////////////////           
+        })
+  
 }
 
 
@@ -340,7 +349,22 @@ let renderCollector = (user) => {
                 
         let collectorDiv3 = document.createElement('div')
         collectorDiv3.className = "grid-item"
+            let newdiv1 = document.createElement('div')
+            newdiv1.className = "grid-container"
+            
 
+            currentUser.favorites.forEach((favorite) => {
+                
+                let newdiv2 = document.createElement('div')
+                    newdiv2.className = "grid-Item" 
+                    let newImg = document.createElement('img')
+                        newImg.src = favorite.artwork.image
+                        newdiv2.append(newImg)
+
+                        newdiv1.append(newdiv2)
+            })
+
+    collectorDiv3.append(newdiv1)
     collectorDiv1.append(collectorDiv2, collectorDiv3)
     mainContainer.append(collectorDiv1)
 }
@@ -478,16 +502,21 @@ let renderCollector = (user) => {
                     formInputMedium.value = artObj.medium
                 
                 let formButton = document.createElement('button')
+                    formButton.type = "submit"
+                    formButton.value = "Submit"
                         formButton.innerText = "Update"
-                        // formButton.type = 'click'
+                        
+
                 let cancelButton = document.createElement('button')
                     cancelButton.innerText = "Cancel"
                     
 
-                    formButton.addEventListener('click', (evt) => {
+                    formTag.addEventListener("submit", (evt) => {
                         evt.preventDefault()
-                        console.log('updateButton')
-                        //create a fetch that patches artwork
+                        let name = evt.target[0].value
+                        let price = evt.target[1].value
+                        let medium = evt.target[2].value
+                        updateArt(artObj, name, price, medium)
                     })
 
                     cancelButton.addEventListener('click', (evt) => {
@@ -529,11 +558,33 @@ let renderCollector = (user) => {
     })
  }
 
+//Fetch to update artworks that currently within the database and dom
+ let updateArt = (artObj, name, price, medium) => {
 
- let updateArt = (name, price, medium) => {
-    //This function will be called by the update event listener in artwork
-    // THis will fetch patch artwork information
-    // I believe and update route needs to be created
+    fetch(`http://localhost:3000/artworks/${artObj.id}`, {
+        method: "PATCH",
+        headers:{
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify({
+            name: name,
+            price: price,
+            medium: medium,
+        })
+    })
+    .then(res => res.json())
+    .then(updated => {
+        console.log(updated.name)
+        let newImg = document.createElement('img')
+                     newImg.src = updated.image
+                     newImg.id = updated.id
+        artObj.name = name
+        artObj.price = price
+        artObj.medium = medium
+
+        renderImageInfo(newImg, artObj)
+    })
+    
  }
 
 
