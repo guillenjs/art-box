@@ -10,6 +10,15 @@ class ArtworksController < ApplicationController
         render json: artwork
     end
 
+    def update
+       
+        artwork = Artwork.find(params[:id])
+        artwork.update(updateparams)
+
+        render json: artwork
+        
+    end
+
     def create
         newArt = Artwork.create(artparams) 
         render json: newArt
@@ -25,6 +34,10 @@ class ArtworksController < ApplicationController
 
     def artparams
         params.permit(:name, :price, :medium, :image, :availability, :dimension, :artist_id, :collector_id)
+    end
+
+    def updateparams
+        params.permit(:name, :price, :medium)
     end
 
 end

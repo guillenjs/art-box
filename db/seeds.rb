@@ -24,14 +24,9 @@ artist = [
     location: "France"
 },
 {
-    name: "Gerard Richter",
+    name: "Gerhard Richter",
     age: 80,
     location: "Dresden, Germany"
-},
-{
-    name: "Camron Roland",
-    age: 32,
-    location: "Philly, PA" 
 },
 {
     name: "Jordan Casteel",
@@ -106,74 +101,78 @@ artworks = [
         availability: true,
         dimension: "30 in x 30 in",
         artist_id: 1,
+    },
+    {
+        name: "St.John",
+        price: 4000000,
+        medium: "Oil on Canvas",
+        image: "https://www.tate.org.uk/art/images/work/T/T05/T05207_9.jpg",
+        availability: false,
+        dimension: "6 ft x 8 ft", 
+        artist_id: 4         
+    },
+    {
+        name: "Revolution",
+        price: 500000,
+        medium: "Oil Mural",
+        image: "https://uploads4.wikiart.org/images/david-alfaro-siqueiros/the-revolution-mural.jpg",
+        availability: false,
+        dimension: "6 ft x 8 ft",
+           artist_id: 9
+    },
+    {
+        name: "Miles and Jojo",
+        price: 300000,
+        medium: "Oil on Canvas",
+        image: "https://wp.stanforddaily.com/wp-content/uploads/2019/10/MilesandJojo54x72inoiloncanvas2015.jpg",
+        availability: false,
+        dimension: "54 in x 72 in", 
+           artist_id: 5
+    },
+    {
+        name: "Burn",
+        price: 400000,
+        medium: "Paper and Adhesive on Wall",
+        image: "https://i.pinimg.com/originals/8d/62/e0/8d62e0a5ed2398bfb3ae62a41033cec8.jpg",
+        availability: false,
+        dimension: "92 in x 48 in",
+           artist_id:6
+    },
+    {
+        name: "Around the Circle",
+        price: 130000,
+        medium: "Oil and Enamel on Canvas",
+        image: "https://image.posterlounge.com/img/products/650000/640689/640689_poster_l.jpg",
+        availability: true,
+        dimension: "3 ft x 4 ft",  
+           artist_id: 7 
+    }, 
+    {
+        name: "Untitled-Studio",
+        price: 1300000,
+        medium: "Acrylic on PVC Panels",
+        image: "https://d7hftxdivxxvm.cloudfront.net/?resize_to=fit&width=1141&height=787.5&quality=80&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F5Px-MP9YSmxfGCNmOkzt3w%2Flarge.jpg",
+        availability: true,
+        dimension: "83 ft x 119 ft",
+        artist_id: 8
+    },
+    {
+        name: "Last drink",
+        price: 230000,
+        medium: "Oil on Canvas",
+        image: "https://www.bkmotel.org/exhibitions/2020/jg/install/12.jpg",
+        availability: true,
+        dimension: "14 in x 11 in",
+        artist_id:2
     }
 ]
-    # ,
-#     {
-#         name: "St.John",
-#         price: 4000000,
-#         medium: "Oil on Canvas",
-#         image: "https://www.tate.org.uk/art/images/work/T/T05/T05207_9.jpg",
-#         availability: false,
-#         dimension: "6 ft x 8 ft" 
-#     },
-#     {
-#         name: "Depreciation",
-#         price: 4000000,
-#         medium: "Scultpure and Texts",
-#         image: "https://lh3.googleusercontent.com/proxy/8rGSGj4Y0IRWha4YwQAOXOdiMoMXpEqHqKYY1My4vq1sO3-0UFnsVytCltmwemnAp0GYvMRgHO077i_vgcxhMtESVub1YQF5oTNepquZXxcukMOWTvHU-M0IWDxeiQ",
-#         availability: true,
-#         dimension: "Undefined"  
-#     },
-#     {
-#         name: "Revolution",
-#         price: 500000,
-#         medium: "Oil Mural",
-#         image: "https://uploads4.wikiart.org/images/david-alfaro-siqueiros/the-revolution-mural.jpg",
-#         availability: false,
-#         dimension: "6 ft x 8 ft"
-#     },
-#     {
-#         name: "Miles and Jojo",
-#         price: 300000,
-#         medium: "Oil on Canvas",
-#         image: "https://wp.stanforddaily.com/wp-content/uploads/2019/10/MilesandJojo54x72inoiloncanvas2015.jpg",
-#         availability: false,
-#         dimension: "54 in x 72 in" 
-#     },
-#     {
-#         name: "Burn",
-#         price: 400000,
-#         medium: "Paper and Adhesive on Wall",
-#         image: "https://i.pinimg.com/originals/8d/62/e0/8d62e0a5ed2398bfb3ae62a41033cec8.jpg",
-#         availability: false,
-#         dimension: "92 in x 48 in" 
-#     },
-#     {
-#         name: "Around the Circle",
-#         price: 130000,
-#         medium: "Oil and Enamel on Canvas",
-#         image: "https://image.posterlounge.com/img/products/650000/640689/640689_poster_l.jpg",
-#         availability: true,
-#         dimension: "3 ft x 4 ft"  
-#     },
-#     {
-#         name: "Untitled-Studio",
-#         price: 1300000,
-#         medium: "Acrylic on PVC Panels",
-#         image: "https://d7hftxdivxxvm.cloudfront.net/?resize_to=fit&width=1141&height=787.5&quality=80&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F5Px-MP9YSmxfGCNmOkzt3w%2Flarge.jpg",
-#         availability: true,
-#         dimension: "83 ft x 119 ft"  
-#     },
-#     {
-#         name: "lover",
-#         price: 230000,
-#         medium: "Oil on Canvas",
-#         image: "https://www.bkmotel.org/exhibitions/2020/jg/install/17.jpg",
-#         availability: true,
-#         dimension: "14 in x 11 in"
-#     }
-# ]
+
+
+
+   
+     
+   
+   
 
 
 Artist.create(artist)
