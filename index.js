@@ -188,8 +188,6 @@ let navBar = () => {
         })
 }
 let renderDiscovered = (artistArray) => {
-<<<<<<< HEAD
-   
     let artDisDiv = document.createElement('div')
         artDisDiv.className = "grid-container"
         
@@ -235,27 +233,6 @@ let discoverToFeatured = (artistObj) => {
 
     artistDiv.append(artistDivP, artistImg)
     mainContainer.append(artistDiv) 
-=======
-    //console.log(artistArray[0]);
-    
-    let discoveredArtDiv = document.createElement('div')
-    discoveredArtDiv.className = "artist-container"
-    let discoveredArtList = document.createElement('ul')
-
-    let discoveredArtLi1 = document.createElement('li')
-    discoveredArtLi1.innerText = artistArray.name
-    let br1 = document.createElement('br')
-
-    discoveredArtDiv.addEventListener('click', (evt) => {
-        console.log(artistArray.artworks[0])
-        console.log(currentUser)
-        addLike(artistArray, currentUser)
-    })
-
-    discoveredArtList.append(discoveredArtLi1, br1)
-    discoveredArtDiv.append(discoveredArtList)
-    mainContainer.append(discoveredArtDiv)
->>>>>>> update
 }
 
 let addLike = (artwork, collector) => {
