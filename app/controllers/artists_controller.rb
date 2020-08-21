@@ -5,6 +5,12 @@ class ArtistsController < ApplicationController
         render json: @artist
     end
 
+    def random
+        artist = Artist.all.sample
+        render json: artist
+    end
+
+
     def show
         artist = Artist.find(params[:id])
         render json: artist
